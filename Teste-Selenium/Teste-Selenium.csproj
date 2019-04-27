@@ -52,10 +52,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageObjects\Americanas.cs" />
+    <Compile Include="Testes\Teste_Americanas.cs" />
     <Compile Include="Utils\Utils.cs" />
-    <Compile Include="PageObjects\GoogleMaps.cs" />
+    <Compile Include="PageObjects\Youtube.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Testes\Testar_GoogleMaps.cs" />
+    <Compile Include="Testes\Testar_Youtube.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
