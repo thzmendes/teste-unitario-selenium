@@ -23,18 +23,12 @@ namespace Teste_Youtube
             x.webDriver.Navigate().GoToUrl(x.homeURL);
             x.Buscar(x.webDriver, busca);
             x.SelecionarVideo(x.webDriver);
-
-
         }
 
         public void TearDownTest()
         {
             x.webDriver.Close();
         }
-
-
     }
-
-
 }
 

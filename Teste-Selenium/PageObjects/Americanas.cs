@@ -8,9 +8,9 @@ namespace Teste_Selenium.PageObjects
         public IWebDriver webDriver;
         public string homeURL;
 
-        public void Buscar(IWebDriver webDriver, string local)
+        public void Buscar(IWebDriver webDriver, string produto)
         {
-            webDriver.SetText(By.Id("h_search-input"), local);
+            webDriver.SetText(By.Id("h_search-input"), produto);
             webDriver.FindElement(By.Id("h_search-input")).SendKeys(Keys.Enter);
         }
 
@@ -28,16 +28,24 @@ namespace Teste_Selenium.PageObjects
         {
             webDriver.FindElement(By.XPath("//*[@id='app']/section/section/div[1]/div[1]/section/ul/li/div[2]/div[2]/div/select")).Click();
             webDriver.FindElement(By.XPath(" //*[@id='app']/section/section/div[1]/div[1]/section/ul/li/div[2]/div[2]/div/select/option[3]")).Click();
-           
+
         }
-        public void PreencherCEP(IWebDriver webDriver, string cep)
+
+        public void AvancarParaCadastro(IWebDriver webDriver)
         {
-            webDriver.SetText(By.Id("cep"), cep);
-            webDriver.Submit(By.XPath("//*[@id='app']/section/section/div[1]/div[2]/div/button"));
+            webDriver.FindElement(By.XPath("//*[@id='buy-button']")).Click();
         }
-        public void Avancar(IWebDriver webDriver)
+
+        public void PreencherEmail(IWebDriver webDriver, string email)
         {
-            webDriver.FindElement(By.Id("//*[@id='buy-button']")).Click();
+            webDriver.SetText(By.Id("email-input"), email);
+
         }
+
+        public void PreencherSenha(IWebDriver webDriver, string senha)
+        {
+            webDriver.SetText(By.Id("password-input"), senha);
+        }
+      
     }
 }

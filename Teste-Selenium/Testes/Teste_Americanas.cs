@@ -16,17 +16,19 @@ namespace Teste_Americanas
             x.webDriver = new ChromeDriver();
         }
 
-        [TestCase("one milion", "01303900")]
-        public void TesteAmericanas(string busca, string cep)
+        [TestCase("one milion", "teste@teste.com","teste1234")]
+        public void TesteAmericanas(string busca, string email, string senha)
         {
             x.homeURL = "https://www.americanas.com.br/";
             x.webDriver.Navigate().GoToUrl(x.homeURL);
             x.Buscar(x.webDriver, busca);
             x.SelecionarProduto(x.webDriver);
             x.ProsseguirCompra(x.webDriver);
-            x.SelecionarQuantidade(x.webDriver);
-            x.PreencherCEP(x.webDriver, cep);
-            x.Avancar(x.webDriver);
+            x.SelecionarQuantidade(x.webDriver);           
+            x.AvancarParaCadastro(x.webDriver);
+            x.PreencherEmail(x.webDriver,email);
+            x.PreencherSenha(x.webDriver,senha);
+
             TearDownTest();
         }
 
@@ -34,10 +36,6 @@ namespace Teste_Americanas
         {
             x.webDriver.Close();
         }
-
-
     }
-
-
 }
 
